@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title>TABUADA</title>
+  <meta charset='utf-8'/>
+ </head>
+ <body>
+ <h1>Tabuada</h1>
+  <script>
+   for(num1=1;num1<=100;num1++){
+   document.write('<table border="1">');
+    for(num2=1;num2<=10;num2++){
+     var res=num1*num2;
+     document.write("<tr>");
+     document.write("<td>"+num1+" x "+num2+" = "+res+"<br></td>");
+     document.write("</tr>");
+    }
+    document.write("</table><br><br>");
+   }
+   </script>
+ </body>
+ </html>
