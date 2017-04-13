@@ -1,0 +1,32 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="text/javascript">
+   function temp(c){
+    var f=c*1.8+32;
+    return f;
+   }
+   function evento(){
+    var tot=document.getElementById("num").value;
+    var resl="Temperatura em °Fahrenheit é: "+temp(tot)+"°";
+    document.getElementById("mensagem").innerHTML=resl;
+    
+   }
+  </script>
+ </head>
+ <body>
+ <center>
+ <h1>Conversão de temperaturas</h1>
+ </center>
+  <table>
+  <tr>
+  <td width = "200">Temperatura em °Celsius</td>
+  <td width = "30"> <input type ="text" id = "num" value = "" size = "3"/></td>
+  </tr>
+  <tr><td></td>
+  <td><input type = "button" value = "Converter" onclick = "evento()"/> </td>
+  </tr>
+  </table>
+  <p id="mensagem"></p>
+ </body>
+</html>
