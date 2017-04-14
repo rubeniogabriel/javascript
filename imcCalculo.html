@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+		<script type="text/javascript" >
+		function imc() {
+			var altura = window.document.getElementById("alturaform").value;
+			var peso   = window.document.getElementById("pesoform").value;
+			var resultado = " ";
+		if (altura == "") {
+				alert("É necessário indicar sua altura");
+				window.document.getElementById("alturaform").focus();
+			} else if(peso == ""){
+				alert("É necessário indicar seu peso");
+				window.document.getElementById("pesoform").focus();
+			}else {          				
+				var calimc = peso/(altura*altura);
+				if (calimc < 18.5) {
+					resultado = calimc+" Classificação Magreza";
+				} else if((calimc > 18.5) && (calimc < 24.9)){
+					resultado = calimc+" Classificação Saudável";
+				} else if((calimc > 25.0) && (calimc < 29.9)){
+					resultado = calimc+" Classificação Sobrepeso";
+				}else if((calimc > 30.0) && (calimc < 34.9)){
+					resultado = calimc+" Classificação Obesidade Grau I";
+				}else if((calimc > 35.0) && (calimc < 39.9)){
+					resultado = calimc+" Classificação Obesidade Grau II (severa)";
+				}else if(calimc >= 40){
+					resultado = calimc+" Classificação Obesidade Grau III (morbida)";
+				}
+			}
+			
+			 window.document.getElementById("mensagem").innerHTML = resultado;
+		}
+		
+		</script>
+	</head>
+	<body>
+		<h1>Cálculo do IMC</h1>
+		<form name="imcform">
+		<table summary="" >
+		<tr>
+		<td width="40">Altura:</td>   
+		<td width="40"><input type="" id="alturaform" value="" />	</td>
+		</tr>
+		<tr>
+		<td width="40">Peso:</td>   
+		<td width="40"><input type="text"id="pesoform" value="" />	</td>
+		</tr>
+		<tr>
+		<td colspan="2" align="center" >
+				<input type="button" name="btncalcula" value="calcular" onclick="imc()" />
+		</td>
+		</tr>	
+		</table>
+		</form>
+		<div>
+			<p id="mensagem"></p>		
+		</div>
+	</body>
+</html>
